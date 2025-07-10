@@ -26,7 +26,7 @@ This is a SwiftUI-based **GitHub profile viewer** app that lets you search for u
 
 | Search User | Profile View | Repositories |
 |-------------|--------------|--------------|
-| ![Search](screenshots/search.png) | ![Profile](screenshots/profile.png) | ![Repos](screenshots/repos.png) | ![Follower](screenshots/repos.png)
+| ![Search](https://github.com/abhishekak048/GitHub-clone/blob/38338c460a63e7b1299ef3440610384856acae69/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-07-10%20at%2017.35.26.png) | ![Profile](https://github.com/abhishekak048/GitHub-clone/blob/38338c460a63e7b1299ef3440610384856acae69/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-07-10%20at%2017.35.21.png) | ![Repos](https://github.com/abhishekak048/GitHub-clone/blob/38338c460a63e7b1299ef3440610384856acae69/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-07-10%20at%2017.35.35.png) | ![Follower](https://github.com/abhishekak048/GitHub-clone/blob/main/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-07-10%20at%2017.35.30.png)
 
 > 📁 Screenshots are located in the `/screenshots` directory.
 
