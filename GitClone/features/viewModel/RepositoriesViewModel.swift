@@ -1,0 +1,47 @@
+//
+//  sjhh.swift
+//  GitClone
+//
+//  Created by Abhishek Kumar on 09/07/25.
+//
+
+import Foundation
+import Combine
+
+class RepositoriesViewModel : ObservableObject {
+    
+    private var getUserRepositoriesRepo : GetUserRepositoriesRepo
+    
+    private(set) var userRepos = Repositories()
+    private var cancellables = Set<AnyCancellable>()
+    
+    @Published private(set) var state: RepositoriesState = .loading
+    
+
+    init(getUserRepositories: GetUserRepositoriesRepo){
+        self.getUserRepositoriesRepo = getUserRepositories
+    }
+    
+    @MainActor
+    func getUserRepositories(userName:String){
+        self.state = .loading
+        
+        
+        let cancellable = getUserRepositoriesRepo.getUserRepositories(from: .getUserRepos(userName: userName))
+            .sink { res in
+                switch res {
+                    
+                case .finished:
+                    self.state = .success(results: self.userRepos)
+                   
+                case .failure(let error):
+                    self.state = .failed(error: error)
+                
+                }
+            } receiveValue: { response in
+                self.userRepos = response
+            }
+        
+        self.cancellables.insert(cancellable)
+    }
+}
